@@ -1,0 +1,3 @@
+## Lifecycle Diagram
+
+![](lifecycle.png)

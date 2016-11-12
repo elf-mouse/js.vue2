@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Vue.js</title>
+</head>
+
+<body>
+  <div id="app">
+    <div v-bind:style="myStyle">Hello World</div>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      myStyle: {
+        transform: 'rotate(-8deg)'
+      }
+    }
+  })
+  </script>
+</body>
+
+</html>

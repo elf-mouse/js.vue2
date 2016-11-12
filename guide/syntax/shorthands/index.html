@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Vue.js</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- :href = v-bind:href -->
+    <p><a :href="url">BalmJS</a></p>
+    <!-- @click = v-on:click -->
+    <p><a @click="doSomething">doSomething</a></p>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      url: '//balmjs.com'
+    },
+    methods: {
+      doSomething() {
+        console.log('Hello World')
+      }
+    }
+  })
+  </script>
+</body>
+
+</html>
