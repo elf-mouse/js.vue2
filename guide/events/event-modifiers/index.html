@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Event Modifiers</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- the click event's propagation will be stopped -->
+    <a href="//balmjs.com" v-on:click.stop="doThis">
+      <b @click="test">a@click.stop</b>
+    </a>
+    <!-- the submit event will no longer reload the page -->
+    <form v-on:submit.prevent="onSubmit">
+      <button type="submit">form@submit.prevent</button>
+    </form>
+    <!-- modifiers can be chained -->
+    <a href="//balmjs.com" v-on:click.stop.prevent="doThat">
+      <b @click="test">a@click.stop.prevent</b>
+    </a>
+    <!-- just the modifier -->
+    <form v-on:submit.prevent>
+      <button type="submit">from@submit.prevent</button>
+    </form>
+    <!-- use capture mode when adding the event listener -->
+    <div v-on:click.capture="doThis2">
+      <span @click="test">div@click.capture</span>
+    </div>
+    <!-- only trigger handler if event.target is the element itself -->
+    <!-- i.e. not from a child element -->
+    <div v-on:click.self="doThat2">div@click.self</div>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+  new Vue({
+    el: '#app',
+    methods: {
+      doThis() {
+        console.log('doThis', 'a@click.stop');
+      },
+      onSubmit() {
+        console.log('onSubmit', 'form.prevent');
+      },
+      doThat() {
+        console.log('doThat', 'a@click.stop.prevent');
+      },
+      doThis2() {
+        console.log('doThis2', 'div@click.capture');
+      },
+      doThat2(event) {
+        console.log('doThat2', 'div@click.self', event.target);
+      },
+      test() {
+        console.info('test');
+      }
+    }
+  })
+  </script>
+</body>
+
+</html>
