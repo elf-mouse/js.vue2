@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Vue.js</title>
+</head>
+
+<body>
+  <div id="app">
+    <select v-model="selected">
+      <!-- inline object literal -->
+      <option v-bind:value="{ number: 123 }">123</option>
+    </select>
+    <label>{{ selected }}</label>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      selected: ''
+    }
+  })
+  </script>
+</body>
+
+</html>

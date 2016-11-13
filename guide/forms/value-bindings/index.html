@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Vue.js</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- `picked` is a string "a" when checked -->
+    <input type="radio" v-model="picked" value="a">
+    <!-- `toggle` is either true or false -->
+    <input type="checkbox" v-model="toggle">
+    <!-- `selected` is a string "abc" when selected -->
+    <select v-model="selected">
+      <option value="abc">ABC</option>
+    </select>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      picked: 'a',
+      toggle: false,
+      selected: 'abc'
+    }
+  })
+  </script>
+</body>
+
+</html>

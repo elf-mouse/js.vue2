@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Vue.js</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- synced after "change" instead of "input" -->
+    <p>
+      <input v-model.lazy="msg" @change="changeMsg">
+    </p>
+    <p>
+      <input v-model.number="age" type="number" @change="changeAge">
+    </p>
+    <p>
+      <input v-model.trim="text" @change="changeText">
+    </p>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      msg: '',
+      age: 0,
+      text: ''
+    },
+    methods: {
+      changeMsg() {
+        console.log(this.msg);
+      },
+      changeAge() {
+        console.log(this.age);
+      },
+      changeText() {
+        console.log(this.text, this.text.length);
+      }
+    }
+  })
+  </script>
+</body>
+
+</html>
