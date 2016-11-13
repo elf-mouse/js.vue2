@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Vue.js</title>
+</head>
+
+<body>
+  <div id="example">
+    <!-- kebab-case in HTML -->
+    <child my-message="hello!"></child>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+  Vue.component('child', {
+    // camelCase in JavaScript
+    props: ['myMessage'],
+    template: '<span>{{ myMessage }}</span>'
+  })
+
+  // create a root instance
+  new Vue({
+    el: '#example'
+  })
+  </script>
+</body>
+
+</html>

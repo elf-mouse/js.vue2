@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Vue.js</title>
+</head>
+
+<body>
+  <div id="example">
+    <!-- this passes down a plain string "1" -->
+    <comp some-prop="1"></comp>
+    <!-- this passes down an actual number -->
+    <comp :some-prop="1"></comp>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+  Vue.component('comp', {
+    props: ['someProp'],
+    template: '<span>{{ someProp }}</span>',
+    created() {
+      console.log(typeof this.someProp);
+    }
+  })
+
+  // create a root instance
+  new Vue({
+    el: '#example'
+  })
+  </script>
+</body>
+
+</html>

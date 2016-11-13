@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Vue.js</title>
+</head>
+
+<body>
+  <div id="example">
+    <h1>I'm the parent title</h1>
+    <my-component>
+      <p>This is some original content</p>
+      <p>This is some more original content</p>
+    </my-component>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+  Vue.component('my-component', {
+    template: `<div>
+      <h2>I'm the child title</h2>
+      <slot>
+        This will only be displayed if there is no content
+        to be distributed.
+      </slot>
+    </div>`
+  })
+
+  new Vue({
+    el: '#example'
+  })
+  </script>
+</body>
+
+</html>
